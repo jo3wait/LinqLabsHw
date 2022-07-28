@@ -38,11 +38,11 @@ namespace LinqLabsHw
             var q1 = students_scores.Where(s => s.Math >= 90).Select(s => new { s.Name, s.Math, Level = group[2] });
             this.dataGridView1.DataSource = q1.ToList();
                         
-            var q2 = students_scores.Where(s => s.Math >= 70 && s.Math < 90).Select(s => new { s.Name, s.Math, Level = group[1] });
-            this.dataGridView1.DataSource = q2.ToList();
+            //var q2 = students_scores.Where(s => s.Math >= 70 && s.Math < 90).Select(s => new { s.Name, s.Math, Level = group[1] });
+            //this.dataGridView1.DataSource = q2.ToList();
             
-            var q3 = students_scores.Where(s => s.Math >= 60 && s.Math < 70).Select(s => new { s.Name, s.Math, Level = group[0] });
-            this.dataGridView1.DataSource = q3.ToList();
+            //var q3 = students_scores.Where(s => s.Math >= 60 && s.Math < 70).Select(s => new { s.Name, s.Math, Level = group[0] });
+            //this.dataGridView1.DataSource = q3.ToList();
 
         }
 
