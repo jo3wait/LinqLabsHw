@@ -374,9 +374,6 @@ namespace LinqLabsHw
                 cmbOrderYear.Items.Add(n);
         }
 
-        private void btnScoreAll_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

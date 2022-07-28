@@ -30,14 +30,12 @@ namespace LinqLabsHw
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnScoreStu = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnProdNext = new System.Windows.Forms.Button();
             this.btnProdPre = new System.Windows.Forms.Button();
             this.txtProdRows = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnFileInfo = new System.Windows.Forms.Button();
-            this.btnScoreAll = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -58,9 +56,9 @@ namespace LinqLabsHw
             this.txtOrderRows = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label2 = new System.Windows.Forms.Label();
             this.cmbFileCreatedYear = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.nwDataSet1 = new LinqLabsHw.nwDataSet();
             this.productsTableAdapter1 = new LinqLabsHw.nwDataSetTableAdapters.ProductsTableAdapter();
             this.ordersTableAdapter1 = new LinqLabsHw.nwDataSetTableAdapters.OrdersTableAdapter();
@@ -81,17 +79,6 @@ namespace LinqLabsHw
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnScoreStu
-            // 
-            this.btnScoreStu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnScoreStu.Location = new System.Drawing.Point(79, 341);
-            this.btnScoreStu.Margin = new System.Windows.Forms.Padding(6);
-            this.btnScoreStu.Name = "btnScoreStu";
-            this.btnScoreStu.Size = new System.Drawing.Size(309, 50);
-            this.btnScoreStu.TabIndex = 154;
-            this.btnScoreStu.Text = "學生個人成績";
-            this.btnScoreStu.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -157,7 +144,7 @@ namespace LinqLabsHw
             // btnFileInfo
             // 
             this.btnFileInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnFileInfo.Location = new System.Drawing.Point(79, 57);
+            this.btnFileInfo.Location = new System.Drawing.Point(80, 57);
             this.btnFileInfo.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnFileInfo.Name = "btnFileInfo";
             this.btnFileInfo.Size = new System.Drawing.Size(309, 46);
@@ -165,18 +152,6 @@ namespace LinqLabsHw
             this.btnFileInfo.Text = "     FileInfo[] ";
             this.btnFileInfo.UseVisualStyleBackColor = false;
             this.btnFileInfo.Click += new System.EventHandler(this.btnFileInfo_Click);
-            // 
-            // btnScoreAll
-            // 
-            this.btnScoreAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnScoreAll.Location = new System.Drawing.Point(79, 281);
-            this.btnScoreAll.Margin = new System.Windows.Forms.Padding(6);
-            this.btnScoreAll.Name = "btnScoreAll";
-            this.btnScoreAll.Size = new System.Drawing.Size(309, 50);
-            this.btnScoreAll.TabIndex = 147;
-            this.btnScoreAll.Text = "搜尋 班級學生成績";
-            this.btnScoreAll.UseVisualStyleBackColor = false;
-            this.btnScoreAll.Click += new System.EventHandler(this.btnScoreAll_Click);
             // 
             // label9
             // 
@@ -215,7 +190,7 @@ namespace LinqLabsHw
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(646, 443);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(646, 444);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // lblDetails
@@ -240,7 +215,7 @@ namespace LinqLabsHw
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(632, 374);
+            this.dataGridView2.Size = new System.Drawing.Size(632, 375);
             this.dataGridView2.TabIndex = 100;
             // 
             // btnOrderAll
@@ -258,7 +233,7 @@ namespace LinqLabsHw
             // btnFileInfo_log
             // 
             this.btnFileInfo_log.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnFileInfo_log.Location = new System.Drawing.Point(79, 113);
+            this.btnFileInfo_log.Location = new System.Drawing.Point(80, 113);
             this.btnFileInfo_log.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnFileInfo_log.Name = "btnFileInfo_log";
             this.btnFileInfo_log.Size = new System.Drawing.Size(309, 46);
@@ -282,12 +257,12 @@ namespace LinqLabsHw
             // btnFileInfoCreated
             // 
             this.btnFileInfoCreated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnFileInfoCreated.Location = new System.Drawing.Point(79, 169);
+            this.btnFileInfoCreated.Location = new System.Drawing.Point(244, 190);
             this.btnFileInfoCreated.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnFileInfoCreated.Name = "btnFileInfoCreated";
-            this.btnFileInfoCreated.Size = new System.Drawing.Size(309, 46);
+            this.btnFileInfoCreated.Size = new System.Drawing.Size(145, 73);
             this.btnFileInfoCreated.TabIndex = 72;
-            this.btnFileInfoCreated.Text = "     FileInfo[]   - year Created - order ";
+            this.btnFileInfoCreated.Text = "     FileInfo[]  -          year Created - order ";
             this.btnFileInfoCreated.UseVisualStyleBackColor = false;
             this.btnFileInfoCreated.Click += new System.EventHandler(this.btnFileInfoCreated_Click);
             // 
@@ -343,7 +318,7 @@ namespace LinqLabsHw
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer2.Size = new System.Drawing.Size(1213, 447);
+            this.splitContainer2.Size = new System.Drawing.Size(1213, 448);
             this.splitContainer2.SplitterDistance = 556;
             this.splitContainer2.SplitterWidth = 7;
             this.splitContainer2.TabIndex = 0;
@@ -361,7 +336,7 @@ namespace LinqLabsHw
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(552, 443);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(552, 444);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblMaster
@@ -386,13 +361,13 @@ namespace LinqLabsHw
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(538, 374);
+            this.dataGridView1.Size = new System.Drawing.Size(538, 375);
             this.dataGridView1.TabIndex = 71;
             // 
             // btnFileInfoBig
             // 
             this.btnFileInfoBig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnFileInfoBig.Location = new System.Drawing.Point(79, 225);
+            this.btnFileInfoBig.Location = new System.Drawing.Point(80, 285);
             this.btnFileInfoBig.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnFileInfoBig.Name = "btnFileInfoBig";
             this.btnFileInfoBig.Size = new System.Drawing.Size(309, 46);
@@ -437,14 +412,12 @@ namespace LinqLabsHw
             // 
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.cmbFileCreatedYear);
-            this.splitContainer1.Panel1.Controls.Add(this.btnScoreStu);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.btnProdNext);
             this.splitContainer1.Panel1.Controls.Add(this.btnProdPre);
             this.splitContainer1.Panel1.Controls.Add(this.txtProdRows);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.btnFileInfo);
-            this.splitContainer1.Panel1.Controls.Add(this.btnScoreAll);
             this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.btnOrderAll);
@@ -463,16 +436,28 @@ namespace LinqLabsHw
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1213, 871);
-            this.splitContainer1.SplitterDistance = 418;
+            this.splitContainer1.SplitterDistance = 417;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 138;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(77, 193);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 17);
+            this.label2.TabIndex = 156;
+            this.label2.Text = "年:";
             // 
             // cmbFileCreatedYear
             // 
             this.cmbFileCreatedYear.Font = new System.Drawing.Font("微軟正黑體", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.cmbFileCreatedYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.cmbFileCreatedYear.FormattingEnabled = true;
-            this.cmbFileCreatedYear.Location = new System.Drawing.Point(392, 190);
+            this.cmbFileCreatedYear.Location = new System.Drawing.Point(113, 190);
             this.cmbFileCreatedYear.Margin = new System.Windows.Forms.Padding(6);
             this.cmbFileCreatedYear.Name = "cmbFileCreatedYear";
             this.cmbFileCreatedYear.Size = new System.Drawing.Size(105, 25);
@@ -489,18 +474,6 @@ namespace LinqLabsHw
             this.label5.Size = new System.Drawing.Size(286, 21);
             this.label5.TabIndex = 104;
             this.label5.Text = "LINQ to Northwind DataSet - Orders";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(389, 169);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 17);
-            this.label2.TabIndex = 156;
-            this.label2.Text = "年:";
             // 
             // nwDataSet1
             // 
@@ -552,14 +525,12 @@ namespace LinqLabsHw
         #endregion
 
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.Button btnScoreStu;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnProdNext;
         private System.Windows.Forms.Button btnProdPre;
         private System.Windows.Forms.TextBox txtProdRows;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnFileInfo;
-        private System.Windows.Forms.Button btnScoreAll;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

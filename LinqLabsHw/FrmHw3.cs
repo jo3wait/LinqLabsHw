@@ -26,16 +26,7 @@ namespace LinqLabsHw
                                   new Student{ Name = "fff", Class = "CS_102", Gender = "Female" , Chi = 80, Eng = 80, Math = 80},
 
                               };
-        }
-        public class Student
-        {
-            public string Name { get; set; }
-            public string Class { get; set; }
-            public string Gender { get; set; }
-            public int Chi { get; set; }
-            public int Eng { get; internal set; }
-            public int Math { get; set; }            
-        }
+        }        
 
         List<Student> students_scores;
 
@@ -105,5 +96,14 @@ namespace LinqLabsHw
             });
             this.dataGridView1.DataSource = q2.ToList();
         }
+    }
+    public class Student
+    {
+        public string Name { get; set; }
+        public string Class { get; set; }
+        public string Gender { get; set; }
+        public int Chi { get; set; }
+        public int Eng { get; internal set; }
+        public int Math { get; set; }
     }
 }

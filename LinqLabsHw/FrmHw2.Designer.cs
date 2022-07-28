@@ -114,7 +114,7 @@ namespace LinqLabsHw
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer2.Size = new System.Drawing.Size(1104, 357);
-            this.splitContainer2.SplitterDistance = 519;
+            this.splitContainer2.SplitterDistance = 663;
             this.splitContainer2.TabIndex = 0;
             // 
             // label10
@@ -182,6 +182,7 @@ namespace LinqLabsHw
             this.btnProdTimeRange.TabIndex = 137;
             this.btnProdTimeRange.Text = "     區間腳踏車 ";
             this.btnProdTimeRange.UseVisualStyleBackColor = false;
+            this.btnProdTimeRange.Click += new System.EventHandler(this.btnProdTimeRange_Click);
             // 
             // label7
             // 
@@ -203,6 +204,7 @@ namespace LinqLabsHw
             this.btnProdYear.TabIndex = 138;
             this.btnProdYear.Text = "     某年腳踏車 ";
             this.btnProdYear.UseVisualStyleBackColor = false;
+            this.btnProdYear.Click += new System.EventHandler(this.btnProdYear_Click);
             // 
             // dtpStart
             // 
@@ -223,6 +225,7 @@ namespace LinqLabsHw
             this.btnProdSeason.TabIndex = 139;
             this.btnProdSeason.Text = "     某季腳踏車  ? 有幾筆 ?";
             this.btnProdSeason.UseVisualStyleBackColor = false;
+            this.btnProdSeason.Click += new System.EventHandler(this.btnProdSeason_Click);
             // 
             // label3
             // 
@@ -245,6 +248,7 @@ namespace LinqLabsHw
             this.btnProdAll.TabIndex = 140;
             this.btnProdAll.Text = "     All 腳踏車 ";
             this.btnProdAll.UseVisualStyleBackColor = false;
+            this.btnProdAll.Click += new System.EventHandler(this.btnProdAll_Click);
             // 
             // label6
             // 
@@ -269,7 +273,7 @@ namespace LinqLabsHw
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.683474F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.31653F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(519, 357);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(663, 357);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblMaster
@@ -281,7 +285,7 @@ namespace LinqLabsHw
             this.lblMaster.ForeColor = System.Drawing.Color.White;
             this.lblMaster.Location = new System.Drawing.Point(3, 0);
             this.lblMaster.Name = "lblMaster";
-            this.lblMaster.Size = new System.Drawing.Size(513, 31);
+            this.lblMaster.Size = new System.Drawing.Size(657, 31);
             this.lblMaster.TabIndex = 0;
             this.lblMaster.Text = "Master";
             // 
@@ -297,7 +301,7 @@ namespace LinqLabsHw
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.683474F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.31653F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(581, 357);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(437, 357);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // lblDetail
@@ -309,7 +313,7 @@ namespace LinqLabsHw
             this.lblDetail.ForeColor = System.Drawing.Color.White;
             this.lblDetail.Location = new System.Drawing.Point(3, 0);
             this.lblDetail.Name = "lblDetail";
-            this.lblDetail.Size = new System.Drawing.Size(575, 31);
+            this.lblDetail.Size = new System.Drawing.Size(431, 31);
             this.lblDetail.TabIndex = 1;
             this.lblDetail.Text = "Detail";
             // 
@@ -320,15 +324,16 @@ namespace LinqLabsHw
             this.dataGridView1.Location = new System.Drawing.Point(3, 34);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(513, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(657, 320);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(3, 34);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(575, 320);
+            this.pictureBox1.Size = new System.Drawing.Size(431, 320);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -349,6 +354,7 @@ namespace LinqLabsHw
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmHw2";
             this.Text = "FrmHw2";
+            this.Load += new System.EventHandler(this.FrmHw2_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
