@@ -23,7 +23,9 @@ namespace LinqLabsHw
                                   new Student{ Name = "ccc", Class = "CS_101", Gender = "Female", Chi = 60, Eng = 50, Math = 75 },
                                   new Student{ Name = "ddd", Class = "CS_102", Gender = "Female" , Chi = 80, Eng = 70, Math = 85},
                                   new Student{ Name = "eee", Class = "CS_101", Gender = "Female" , Chi = 80, Eng = 80, Math = 50},
-                                  new Student{ Name = "fff", Class = "CS_102", Gender = "Female" , Chi = 80, Eng = 80, Math = 80},
+                                  new Student{ Name = "fff", Class = "CS_102", Gender = "Female" , Chi = 80, Eng = 80, Math = 65},
+                                  new Student{ Name = "ggg", Class = "CS_102", Gender = "Male" , Chi = 75, Eng = 65, Math = 90},
+                                  new Student{ Name = "hhh", Class = "CS_101", Gender = "Male" , Chi = 95, Eng = 90, Math = 60},
 
                               };
         }        
@@ -33,16 +35,35 @@ namespace LinqLabsHw
         private void btnGroup_Click(object sender, EventArgs e)
         {
             // split=> 數學成績 分成 三群 '待加強'(60~69) '佳'(70~89) '優良'(90~100) 
-            string[] group = { "待加強(60~69)", "佳(70~89)", "優良(90~100)" };
+            string[] group = { "不及格(0~59)", "待加強(60~69)", "佳(70~89)", "優良(90~100)" };
 
-            var q1 = students_scores.Where(s => s.Math >= 90).Select(s => new { s.Name, s.Math, Level = group[2] });
-            this.dataGridView1.DataSource = q1.ToList();
-                        
-            //var q2 = students_scores.Where(s => s.Math >= 70 && s.Math < 90).Select(s => new { s.Name, s.Math, Level = group[1] });
-            //this.dataGridView1.DataSource = q2.ToList();
-            
-            //var q3 = students_scores.Where(s => s.Math >= 60 && s.Math < 70).Select(s => new { s.Name, s.Math, Level = group[0] });
-            //this.dataGridView1.DataSource = q3.ToList();
+            var q = from s in students_scores
+                    group s by myScoreGroup(s) into g
+                    select new { ScoreGroup = g.Key, Count = g.Count() };
+
+           this.dataGridView1.DataSource = q.ToList();
+
+            //chart
+            this.chart1.DataSource = q.ToList();
+            this.chart1.Series[0].XValueMember = "ScoreGroup";
+            this.chart1.Series[0].YValueMembers = "Count";
+            this.chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+
+            //===================================
+            //依班級
+        }
+
+        private string myScoreGroup(Student s)
+        {
+            string[] scoreGroup = { "不及格(0~59)", "待加強(60~69)", "佳(70~89)", "優良(90~100)" };
+            if (s.Math < 60)
+                return scoreGroup[0];
+            else if (s.Math < 70)
+                return scoreGroup[1];
+            else if (s.Math < 90)
+                return scoreGroup[2];
+            else
+                return scoreGroup[3];
 
         }
 
@@ -96,12 +117,6 @@ namespace LinqLabsHw
                          where s.Name == "bbb"
                          select s;
                 this.dataGridView1.DataSource = q4.ToList();
-
-                //var q4_1 = students_scores.Where(s=> s.Name == "bbb").Select(s=>new { s.Chi, s.Eng, s.Math});
-                //this.chart1.DataSource = q4_1.ToList();
-                //this.chart1.Series[0].Name 
-                //this.chart1.Series[0].YValueMembers = "score";
-                //this.chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
             }
 
             //找出除了 'bbb' 學員的學員的所有成績('bbb' 退學)

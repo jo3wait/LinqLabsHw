@@ -38,9 +38,9 @@ namespace LinqLabsHw
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.cmbScoreAll = new System.Windows.Forms.ComboBox();
             this.cmbScoreStu = new System.Windows.Forms.ComboBox();
+            this.cmbScoreAll = new System.Windows.Forms.ComboBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -92,16 +92,17 @@ namespace LinqLabsHw
             // 
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 11);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Count";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(859, 340);
+            this.chart1.Size = new System.Drawing.Size(820, 301);
             this.chart1.TabIndex = 150;
             this.chart1.Text = "chart1";
             // 
@@ -113,7 +114,7 @@ namespace LinqLabsHw
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(859, 290);
+            this.dataGridView1.Size = new System.Drawing.Size(820, 353);
             this.dataGridView1.TabIndex = 151;
             // 
             // splitContainer1
@@ -135,9 +136,29 @@ namespace LinqLabsHw
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1131, 659);
-            this.splitContainer1.SplitterDistance = 266;
+            this.splitContainer1.SplitterDistance = 305;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 152;
+            // 
+            // cmbScoreStu
+            // 
+            this.cmbScoreStu.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbScoreStu.FormattingEnabled = true;
+            this.cmbScoreStu.Location = new System.Drawing.Point(40, 319);
+            this.cmbScoreStu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbScoreStu.Name = "cmbScoreStu";
+            this.cmbScoreStu.Size = new System.Drawing.Size(186, 25);
+            this.cmbScoreStu.TabIndex = 151;
+            // 
+            // cmbScoreAll
+            // 
+            this.cmbScoreAll.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cmbScoreAll.FormattingEnabled = true;
+            this.cmbScoreAll.Location = new System.Drawing.Point(40, 146);
+            this.cmbScoreAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbScoreAll.Name = "cmbScoreAll";
+            this.cmbScoreAll.Size = new System.Drawing.Size(186, 25);
+            this.cmbScoreAll.TabIndex = 150;
             // 
             // splitContainer2
             // 
@@ -154,30 +175,10 @@ namespace LinqLabsHw
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.chart1);
-            this.splitContainer2.Size = new System.Drawing.Size(859, 659);
-            this.splitContainer2.SplitterDistance = 290;
+            this.splitContainer2.Size = new System.Drawing.Size(820, 659);
+            this.splitContainer2.SplitterDistance = 353;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
-            // 
-            // cmbScoreAll
-            // 
-            this.cmbScoreAll.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmbScoreAll.FormattingEnabled = true;
-            this.cmbScoreAll.Location = new System.Drawing.Point(40, 146);
-            this.cmbScoreAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbScoreAll.Name = "cmbScoreAll";
-            this.cmbScoreAll.Size = new System.Drawing.Size(186, 25);
-            this.cmbScoreAll.TabIndex = 150;
-            // 
-            // cmbScoreStu
-            // 
-            this.cmbScoreStu.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cmbScoreStu.FormattingEnabled = true;
-            this.cmbScoreStu.Location = new System.Drawing.Point(40, 319);
-            this.cmbScoreStu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cmbScoreStu.Name = "cmbScoreStu";
-            this.cmbScoreStu.Size = new System.Drawing.Size(186, 25);
-            this.cmbScoreStu.TabIndex = 151;
             // 
             // FrmHw3
             // 
