@@ -76,6 +76,12 @@
     <Compile Include="FrmHw3.Designer.cs">
       <DependentUpon>FrmHw3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHw4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHw4.Designer.cs">
+      <DependentUpon>FrmHw4.cs</DependentUpon>
+    </Compile>
     <Compile Include="nwDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHw3.resx">
       <DependentUpon>FrmHw3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHw4.resx">
+      <DependentUpon>FrmHw4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
