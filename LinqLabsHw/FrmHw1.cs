@@ -22,7 +22,7 @@ namespace LinqLabsHw
 
         }
 
-        System.IO.FileInfo[] getFiles()
+        internal System.IO.FileInfo[] getFiles()
         {
             lblMaster.Text = "File Info";
             System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(@"c:\windows");

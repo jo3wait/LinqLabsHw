@@ -21,9 +21,9 @@ namespace LinqLabsHw
                                   new Student{ Name = "aaa", Class = "CS_101", Gender = "Male", Chi = 80, Eng = 80, Math = 50 },
                                   new Student{ Name = "bbb", Class = "CS_102", Gender = "Male", Chi = 80, Eng = 80, Math = 100 },
                                   new Student{ Name = "ccc", Class = "CS_101", Gender = "Female", Chi = 60, Eng = 50, Math = 75 },
-                                  new Student{ Name = "ddd", Class = "CS_102", Gender = "Female" , Chi = 80, Eng = 70, Math = 85},
-                                  new Student{ Name = "eee", Class = "CS_101", Gender = "Female" , Chi = 80, Eng = 80, Math = 50},
-                                  new Student{ Name = "fff", Class = "CS_102", Gender = "Female" , Chi = 80, Eng = 80, Math = 65},
+                                  new Student{ Name = "ddd", Class = "CS_102", Gender = "Female" , Chi = 90, Eng = 70, Math = 85},
+                                  new Student{ Name = "eee", Class = "CS_101", Gender = "Female" , Chi = 80, Eng = 80, Math = 95},
+                                  new Student{ Name = "fff", Class = "CS_102", Gender = "Female" , Chi = 55, Eng = 80, Math = 65},
                                   new Student{ Name = "ggg", Class = "CS_102", Gender = "Male" , Chi = 75, Eng = 65, Math = 90},
                                   new Student{ Name = "hhh", Class = "CS_101", Gender = "Male" , Chi = 95, Eng = 90, Math = 60},
 

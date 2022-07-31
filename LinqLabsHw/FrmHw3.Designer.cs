@@ -84,7 +84,7 @@ namespace LinqLabsHw
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.Size = new System.Drawing.Size(186, 71);
             this.btnGroup.TabIndex = 147;
-            this.btnGroup.Text = "自己分群";
+            this.btnGroup.Text = "依數學分群";
             this.btnGroup.UseVisualStyleBackColor = false;
             this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
             // 
@@ -113,6 +113,7 @@ namespace LinqLabsHw
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(820, 353);
             this.dataGridView1.TabIndex = 151;
@@ -147,7 +148,7 @@ namespace LinqLabsHw
             this.cmbScoreStu.Location = new System.Drawing.Point(40, 319);
             this.cmbScoreStu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbScoreStu.Name = "cmbScoreStu";
-            this.cmbScoreStu.Size = new System.Drawing.Size(186, 25);
+            this.cmbScoreStu.Size = new System.Drawing.Size(186, 33);
             this.cmbScoreStu.TabIndex = 151;
             // 
             // cmbScoreAll
@@ -157,7 +158,7 @@ namespace LinqLabsHw
             this.cmbScoreAll.Location = new System.Drawing.Point(40, 146);
             this.cmbScoreAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbScoreAll.Name = "cmbScoreAll";
-            this.cmbScoreAll.Size = new System.Drawing.Size(186, 25);
+            this.cmbScoreAll.Size = new System.Drawing.Size(186, 33);
             this.cmbScoreAll.TabIndex = 150;
             // 
             // splitContainer2
@@ -182,7 +183,7 @@ namespace LinqLabsHw
             // 
             // FrmHw3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1131, 659);
             this.Controls.Add(this.splitContainer1);
