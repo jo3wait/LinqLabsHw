@@ -132,6 +132,11 @@ namespace LinqLabsHw
 
             //chart
             this.chart1.DataSource = null;
+            
+            string s="";
+            foreach(int n in nums)
+                s+= n.ToString()+", ";
+            this.chart1.Titles.Add(s);            
             this.chart1.DataSource = lstNums;
             this.chart1.Series[0].XValueMember = "numsGroup";
             this.chart1.Series[0].YValueMembers = "count";
