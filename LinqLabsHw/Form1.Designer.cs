@@ -38,7 +38,7 @@ namespace LinqLabsHw
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(135, 106);
+            this.button1.Location = new System.Drawing.Point(126, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 44);
             this.button1.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace LinqLabsHw
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(135, 176);
+            this.button2.Location = new System.Drawing.Point(126, 118);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 44);
             this.button2.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace LinqLabsHw
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.Location = new System.Drawing.Point(135, 246);
+            this.button3.Location = new System.Drawing.Point(126, 188);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 44);
             this.button3.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace LinqLabsHw
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button4.Location = new System.Drawing.Point(135, 315);
+            this.button4.Location = new System.Drawing.Point(126, 257);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(109, 44);
             this.button4.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace LinqLabsHw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(377, 347);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
