@@ -38,6 +38,7 @@ namespace LinqLabsHw
             string[] group = { "不及格(0~59)", "待加強(60~69)", "佳(70~89)", "優良(90~100)" };
 
             var q = from s in students_scores
+                    orderby s.Math
                     group s by myScoreGroup(s) into g
                     select new { ScoreGroup = g.Key, Count = g.Count() };
 

@@ -59,10 +59,6 @@ namespace LinqLabsHw
             this.label2 = new System.Windows.Forms.Label();
             this.cmbFileCreatedYear = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.nwDataSet1 = new LinqLabsHw.nwDataSet();
-            this.productsTableAdapter1 = new LinqLabsHw.nwDataSetTableAdapters.ProductsTableAdapter();
-            this.ordersTableAdapter1 = new LinqLabsHw.nwDataSetTableAdapters.OrdersTableAdapter();
-            this.order_DetailsTableAdapter1 = new LinqLabsHw.nwDataSetTableAdapters.Order_DetailsTableAdapter();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -76,7 +72,6 @@ namespace LinqLabsHw
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -475,23 +470,6 @@ namespace LinqLabsHw
             this.label5.TabIndex = 104;
             this.label5.Text = "LINQ to Northwind DataSet - Orders";
             // 
-            // nwDataSet1
-            // 
-            this.nwDataSet1.DataSetName = "nwDataSet";
-            this.nwDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsTableAdapter1
-            // 
-            this.productsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // ordersTableAdapter1
-            // 
-            this.ordersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // order_DetailsTableAdapter1
-            // 
-            this.order_DetailsTableAdapter1.ClearBeforeFill = true;
-            // 
             // FrmHw1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -516,7 +494,6 @@ namespace LinqLabsHw
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -552,10 +529,6 @@ namespace LinqLabsHw
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label5;
-        private nwDataSet nwDataSet1;
-        private nwDataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
-        private nwDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter1;
-        private nwDataSetTableAdapters.Order_DetailsTableAdapter order_DetailsTableAdapter1;
         private System.Windows.Forms.ComboBox cmbFileCreatedYear;
         private System.Windows.Forms.Label label2;
     }

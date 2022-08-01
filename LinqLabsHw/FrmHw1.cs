@@ -15,13 +15,8 @@ namespace LinqLabsHw
         public FrmHw1()
         {
             InitializeComponent();
-
-            this.productsTableAdapter1.Fill(this.nwDataSet1.Products);
-            this.ordersTableAdapter1.Fill(this.nwDataSet1.Orders);
-            this.order_DetailsTableAdapter1.Fill(this.nwDataSet1.Order_Details);
-
         }
-
+        NorthwindEntities dbContext = new NorthwindEntities();
         internal System.IO.FileInfo[] getFiles()
         {
             lblMaster.Text = "File Info";
@@ -90,30 +85,30 @@ namespace LinqLabsHw
             this.dataGridView1.DataSource = null;
             this.dataGridView2.DataSource = null;
 
-            var q1 = from o in this.nwDataSet1.Orders
-                         //DBNull                    
-                     select new
-                     {
-                         o.OrderID,
-                         o.CustomerID,
-                         o.EmployeeID,
-                         o.OrderDate,
-                         o.RequiredDate,
-                         //o.ShippedDate,
-                         o.ShipVia,
-                         o.Freight,
-                         o.ShipName,
-                         o.ShipAddress,
-                         o.ShipCity,
-                         //o.ShipRegion,
-                         //o.ShipPostalCode,
-                         o.ShipCountry
-                     };
+            var q1 = from o in this.dbContext.Orders
+                     select o;
+                     //select new
+                     //{
+                     //    o.OrderID,
+                     //    o.CustomerID,
+                     //    o.EmployeeID,
+                     //    o.OrderDate,
+                     //    o.RequiredDate,
+                     //    //o.ShippedDate,
+                     //    o.ShipVia,
+                     //    o.Freight,
+                     //    o.ShipName,
+                     //    o.ShipAddress,
+                     //    o.ShipCity,
+                     //    //o.ShipRegion,
+                     //    //o.ShipPostalCode,
+                     //    o.ShipCountry
+                     //};
             this.dataGridView1.DataSource = q1.Take(n).ToList();
 
             //==============================
-            var q2 = from d in this.nwDataSet1.Order_Details
-                     join o in this.nwDataSet1.Orders on d.OrderID equals o.OrderID
+            var q2 = from d in this.dbContext.Order_Details
+                     join o in this.dbContext.Orders on d.OrderID equals o.OrderID
                      //join pet in pets on person equals pet.Owner
                      select new
                      {
@@ -153,8 +148,8 @@ namespace LinqLabsHw
             this.dataGridView1.DataSource = null;
             this.dataGridView2.DataSource = null;
 
-            var q1 = from o in this.nwDataSet1.Orders
-                     where o.OrderDate.Year == int.Parse(cmbOrderYear.Text)
+            var q1 = from o in this.dbContext.Orders.AsEnumerable()
+                     where o.OrderDate.Value.Year == int.Parse(cmbOrderYear.Text)
                      select new
                      {
                          o.OrderID,
@@ -175,29 +170,9 @@ namespace LinqLabsHw
             this.dataGridView1.DataSource = q1.Take(n).ToList();
 
             //=================================
-            var q2 = from d in this.nwDataSet1.Order_Details
+            var q2 = from d in this.dbContext.Order_Details.AsEnumerable()
                      join o in q1 on d.OrderID equals o.OrderID
-                     select new
-                     {
-                         o.OrderID,
-                         o.CustomerID,
-                         o.EmployeeID,
-                         o.OrderDate,
-                         o.RequiredDate,
-                         d.ProductID,
-                         d.UnitPrice,
-                         d.Quantity,
-                         d.Discount,
-                         //o.ShippedDate,
-                         o.ShipVia,
-                         o.Freight,
-                         o.ShipName,
-                         o.ShipAddress,
-                         o.ShipCity,
-                         //o.ShipRegion,
-                         //o.ShipPostalCode,
-                         o.ShipCountry,
-                     };
+                     select o;
             this.dataGridView2.DataSource = q2.ToList();
         }
 
@@ -214,49 +189,17 @@ namespace LinqLabsHw
             {
                 nextOrder -= n;
 
-                var q = from o in this.nwDataSet1.Orders
-                        select new
-                        {
-                            o.OrderID,
-                            o.CustomerID,
-                            o.EmployeeID,
-                            o.OrderDate,
-                            o.RequiredDate,
-                            //o.ShippedDate,
-                            o.ShipVia,
-                            o.Freight,
-                            o.ShipName,
-                            o.ShipAddress,
-                            o.ShipCity,
-                            //o.ShipRegion,
-                            //o.ShipPostalCode,
-                            o.ShipCountry
-                        };
+                var q = from o in this.dbContext.Orders.AsEnumerable()
+                        select o;
                 this.dataGridView1.DataSource = q.Take(n + nextOrder).Skip(nextOrder).ToList();
             }
             if (btnClick == 2)
             {               
                 nextOrder -= n;
 
-                var q = from o in this.nwDataSet1.Orders
-                        where o.OrderDate.Year == int.Parse(cmbOrderYear.SelectedItem.ToString())
-                        select new
-                        {
-                            o.OrderID,
-                            o.CustomerID,
-                            o.EmployeeID,
-                            o.OrderDate,
-                            o.RequiredDate,
-                            //o.ShippedDate,
-                            o.ShipVia,
-                            o.Freight,
-                            o.ShipName,
-                            o.ShipAddress,
-                            o.ShipCity,
-                            //o.ShipRegion,
-                            //o.ShipPostalCode,
-                            o.ShipCountry
-                        };
+                var q = from o in this.dbContext.Orders.AsEnumerable()
+                        where o.OrderDate.Value.Year == int.Parse(cmbOrderYear.SelectedItem.ToString())
+                        select o;
                 this.dataGridView1.DataSource = q.Take(n + nextOrder).Skip(nextOrder).ToList();
             }
         }
@@ -272,52 +215,20 @@ namespace LinqLabsHw
 
             if (btnClick == 1)
             {                
-                if (this.nwDataSet1.Orders.Count < nextOrder)
+                if (this.dbContext.Orders.Count() < nextOrder)
                     return;
 
-                var q1 = from o in this.nwDataSet1.Orders
-                         select new
-                         {
-                             o.OrderID,
-                             o.CustomerID,
-                             o.EmployeeID,
-                             o.OrderDate,
-                             o.RequiredDate,
-                             //o.ShippedDate,
-                             o.ShipVia,
-                             o.Freight,
-                             o.ShipName,
-                             o.ShipAddress,
-                             o.ShipCity,
-                             //o.ShipRegion,
-                             //o.ShipPostalCode,
-                             o.ShipCountry
-                         };                
+                var q1 = from o in this.dbContext.Orders.AsEnumerable()
+                         select o;                
                 nextOrder += n;
                 this.dataGridView1.DataSource = q1.Take(n + nextOrder).Skip(nextOrder).ToList();
      
             }
             if (btnClick == 2)
             {                
-                var q = from o in this.nwDataSet1.Orders
-                        where o.OrderDate.Year == int.Parse(cmbOrderYear.SelectedItem.ToString())
-                        select new
-                        {
-                            o.OrderID,
-                            o.CustomerID,
-                            o.EmployeeID,
-                            o.OrderDate,
-                            o.RequiredDate,
-                            //o.ShippedDate,
-                            o.ShipVia,
-                            o.Freight,
-                            o.ShipName,
-                            o.ShipAddress,
-                            o.ShipCity,
-                            //o.ShipRegion,
-                            //o.ShipPostalCode,
-                            o.ShipCountry
-                        };
+                var q = from o in this.dbContext.Orders.AsEnumerable()
+                        where o.OrderDate.Value.Year == int.Parse(cmbOrderYear.SelectedItem.ToString())
+                        select o;
                 if (q.Count() < nextOrder)
                     return;
 
@@ -337,7 +248,7 @@ namespace LinqLabsHw
             int n = int.Parse(txtProdRows.Text);
 
             countP--;
-            var q = from p in this.nwDataSet1.Products
+            var q = from p in this.dbContext.Products.AsEnumerable()
                     select p;
             this.dataGridView1.DataSource = q.Take(n + countP * n).Skip(countP * n).ToList();
         }
@@ -346,14 +257,14 @@ namespace LinqLabsHw
         {            
             int n = int.Parse(txtProdRows.Text);
 
-            if (this.nwDataSet1.Products.Count < countP * n)
+            if (this.dbContext.Products.Count() < countP * n)
                 return;
             lblMaster.Text = "Products";
 
             countP++;
-            var q = from p in this.nwDataSet1.Products.Take(n + countP * n).Skip(countP * n)
+            var q = from p in this.dbContext.Products.AsEnumerable()
                     select p;
-            this.dataGridView1.DataSource = q.ToList();
+            this.dataGridView1.DataSource = q.Take(n + countP * n).Skip(countP * n).ToList();
         }
 
         private void FrmHw1_Load(object sender, EventArgs e)
@@ -368,7 +279,7 @@ namespace LinqLabsHw
 
             //===================================
             cmbOrderYear.Items.Clear();
-            var q2 = this.nwDataSet1.Orders.Select(o => o.OrderDate.Year).Distinct();
+            var q2 = this.dbContext.Orders.Select(o => o.OrderDate.Value.Year).Distinct();
 
             foreach (int n in q2)
                 cmbOrderYear.Items.Add(n);

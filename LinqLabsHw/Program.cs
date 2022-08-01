@@ -16,11 +16,11 @@ namespace LinqLabsHw
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new Form1());
             //Application.Run(new FrmHw1());
             //Application.Run(new FrmHw2());
             //Application.Run(new FrmHw3());
-            Application.Run(new FrmHw4());
+            //Application.Run(new FrmHw4());
         }
     }
 }
